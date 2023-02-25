@@ -1,0 +1,717 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 1500px;
+}
+
+body {
+  background: #000;
+  color: white;
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 5rem 2rem;
+}
+
+/* Navigation Styles */
+
+header {
+  background: black;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 95%;
+  max-width: 1500px;
+}
+
+.logo {
+  font-size: 0.25rem;
+  margin: 1rem;
+  width: 5%;
+  background: white;
+  text-transform: uppercase;
+}
+
+nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  background: black;
+  width: 100%;
+  height: 100vh;
+  padding-top: 2rem;
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #ffa98e;
+}
+
+.nav-toggle:checked ~ nav {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background: black;
+  }
+
+  nav {
+    all: unset;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1em;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav li {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+/* Section One */
+
+.section-one {
+  margin: 11rem 2rem 2rem 0;
+}
+
+.header {
+  font-size: 4.5rem;
+}
+
+.section-one-paragraph {
+  margin: 2rem 0;
+  width: 70%;
+  max-width: 500px;
+  line-height: 1.5rem;
+}
+
+.learn-more-btn {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: black;
+}
+
+.learn-more-btn:hover {
+  background: #6c83ff;
+  color: white;
+}
+
+
+.glass {
+  /* width: 60%; */
+  height: 80vh;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
+  z-index: 1;
+  backdrop-filter: blur(2rem);
+  border-radius: 2rem;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  margin: 90 0 0 0;
+}
+
+.slides {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+}
+
+
+
+.section-three {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+.section-three h3 {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-four {
+  margin-top: 2rem;
+}
+
+.flex-group {
+  display: flex;
+  /* justify-content: ; */
+  align-items: center;
+  gap: 3rem;
+}
+
+.section-four p {
+  margin-bottom: 2rem;
+}
+
+.section-four-btn {
+  margin-bottom: rem;
+}
+
+/* Section Five */
+
+.section-five-flex-group {
+  flex-direction: row-reverse;
+}
+
+.section-five p {
+  margin-bottom: 2rem;
+}
+
+/* Section Six */
+
+.section-six p {
+  margin-bottom: 2rem;
+}
+
+/* Flex Group Mobile */
+
+@media (max-width: 800px) {
+  .flex-group {
+    flex-direction: column;
+  }
+}
+
+/* Section Seven */
+
+.section-seven h3 {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-seven-btn {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  width: 7.5rem;
+}
+
+/* Section Eight */
+
+.section-eight h4 {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.section-eight p {
+  line-height: 1.5rem;
+}
+
+/* .section-eight img {
+  
+} */
+
+.flex-group-eight {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 800px) {
+  .flex-group-eight {
+    flex-direction: column;
+  }
+}
+
+/* Section Nine */
+
+.section-nine {
+  margin-top: 15rem;
+}
+
+.logo-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-nine svg {
+  fill: white;
+  height: 50px;
+  cursor: pointer;
+  transition: ease-in-out 250ms;
+}
+
+.section-nine svg:hover {
+  transform: translateY(-10px);
+  fill: #ffa98e;
+}
+
+/* Section Ten */
+
+.section-ten h3 {
+  margin: 15rem auto 2rem;
+  width: 80%;
+  max-width: 700px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-ten-btn {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 7.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: sans-serif; */
+  overflow-x: hidden;
+}
+
+label {
+  background: #444;
+  color: #fff;
+  transition: transform 400ms ease-out;
+  display: inline-block;
+  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  line-height: 100vh;
+}
+
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  white-space: nowrap;
+}
+input {
+  position: absolute;
+}
+
+.keys {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  transition: all 300ms linear;
+  opacity: 0;
+}
+
+input:focus ~ .keys {
+  opacity: 0.8;
+}
+
+input:nth-of-type(1):checked ~ label:nth-of-type(1),
+input:nth-of-type(2):checked ~ label:nth-of-type(2),
+input:nth-of-type(3):checked ~ label:nth-of-type(3),
+input:nth-of-type(4):checked ~ label:nth-of-type(4) {
+  z-index: 0;
+}
+
+input:nth-of-type(1):checked ~ label {
+  transform: translate3d(0, 0, 0);
+}
+
+input:nth-of-type(2):checked ~ label {
+  transform: translate3d(-100%, 0, 0);
+}
+
+input:nth-of-type(3):checked ~ label {
+  transform: translate3d(-200%, 0, 0);
+}
+
+input:nth-of-type(4):checked ~ label {
+  transform: translate3d(-300%, 0, 0);
+}
+
+label {
+  background: #444;
+  background-size: cover;
+  font-size: 3rem;
+}
+
+label[for="diamonds"],
+label[for="hearts"] {
+  background: #cc0000;
+}
+
+label:before,
+label:after {
+  color: white;
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  padding: 1rem;
+  font-size: 3rem;
+  height: 10rem;
+  /* vertical-align: middle; */
+  line-height: 10rem;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  cursor: pointer;
+}
+
+label:before {
+  content: "\276D";
+  right: 101%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+label:after {
+  content: "\276C";
+  left: 100%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.neonText {
+  color: #000;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #fff,
+    0 0 82px #fff, 0 0 92px #fff, 0 0 102px #fff, 0 0 151px #fff;
+}
+
+/* Additional styling */
+
+/* body {
+  font-size: 18px;
+  font-family: "Vibur", sans-serif;
+  background-color: #010a01;
+}   */
+
+.section-eight > h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-eight > h1 {
+  font-size: 5rem;
+}
+
+.container {
+  margin-top: 20rem;
+}
+
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+
+/* body {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+} */
+
+.slider {
+  background: white;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 150%;
+  left: -5rem;
+}
+
+.slider::before,
+.slider::after {
+  /* background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%); */
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  animation: scroll 50s linear infinite;
+  display: flex;
+  width: calc(250px * 18);
+}
+.slider .slide-track1 {
+  animation: scroll1 80s forwards infinite;
+  display: flex;
+  width: calc(250px *18 );
+  
+}
+
+
+.slider .slide-track:hover {
+  animation-play-state: paused;
+}
+.slider .slide-track1:hover {
+  animation-play-state: paused;
+}
+
+.slider .slide {
+  height: 250px;
+  width: 250px;
+}
+
+.slide:nth-child(1),
+.slide:nth-child(10) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(2),
+.slide:nth-child(11) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(3),
+.slide:nth-child(12) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(4),
+.slide:nth-child(13) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(5),
+.slide:nth-child(14) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(6),
+.slide:nth-child(15) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(7),
+.slide:nth-child(16) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(8),
+.slide:nth-child(17) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+.slide:nth-child(9),
+.slide:nth-child(18) {
+  background: url('https://img.freepik.com/free-vector/discount-coupon-sale-tickets-vector-set-label-tag-price-retail-promotion-business-illustration_1284-42779.jpg');
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 9));
+  }
+}
+@keyframes scroll1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(250px * 9));
+  }
+}
+
+.section-infiCarousel{
+  margin-top: 10rem;
+
+}
+
+.container{
+  width: 100%;
+  display:block;
+  overflow:hidden;
+}
+.carousel{
+  display:block;
+  width: 100%;
+  height: 350px;
+  background: black;
+  overflow-x: scroll;
+  /* overflow-x: visible; */
+  padding: 10px;
+  margin: 0;
+  white-space: nowrap; 
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.item {
+    display: inline-block;
+    width: 380px;
+    margin: 0 10px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.05) no-repeat center center;
+    background-size: cover;
+    position:relative;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #dfdfdf;
+}
+.item div{
+  width: 100%;
+  top:10%;
+  position:absolute;
+  text-align:center;
+  font-size: 9em;
+  color: white;
+}
+.item h1{
+  top: 50%;
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 4em;
+}
+#party{
+  background:url(../js/storesIcons/flipkart.png)}
+#mood{
+  background-image:url(../js/storesIcons/flipkart.png)}
+#world{
+   background-image: url(../js/storesIcons/flipkart.png)}
+#ambient{
+  background-image:url(../js/storesIcons/flipkart.png)}
+#work{
+  background-image:url(../js/storesIcons/flipkart.png)}

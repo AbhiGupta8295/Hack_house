@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Profile</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="../css/profile.css" type="text/css" />
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover"
+    style="background-color: black"
+  >
+    <div
+      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0"
+    >
+      <div
+        id="profile"
+        class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0"
+      >
+        <div class="p-4 md:p-12 text-center lg:text-left">
+          <div
+            class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
+            style="
+              background-image: url('https://source.unsplash.com/MP0IUfwrn0A');
+            "
+          ></div>
+
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Demo User</h1>
+          <div
+            class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"
+          ></div>
+          <br />
+          <table id="customers">
+            <tr>
+              <th>Account Details</th>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>demoUser@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Mobile No</td>
+              <td>1234567890</td>
+            </tr>
+            <tr>
+              <td>Wallet</td>
+              <td>1000 <strong>pts</strong></td>
+            </tr>
+            <tr>
+              <td>Transaction</td>
+              <td>
+                <select name="teansaction" id="TransactionS">
+                  <option value="volvo">Buy</option>
+                  <option value="saab">Sale</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <div class="pt-10 pb-6">
+            <p
+              class="px-2 mt-2"
+              style="
+                box-sizing: content-box;
+                width: 20%;
+                border: solid #04aa6d 2px;
+                border-radius: 5%;
+                padding: 5px;
+              "
+            >
+              KUPON200
+            </p>
+
+            <button
+              onclick="shareOnSocialMedia()"
+              id="Share"
+              class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full mt-2"
+            >
+              Share Code
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-2/5">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAb1BMVEUAAAD////7+/v19fU4ODj4+PgKCgrs7OxnZ2dAQEB9fX1eXl4GBgbQ0NAhISGvr68oKChNTU29vb3o6OgjIyPg4OCWlpZwcHAxMTFXV1fa2tqdnZ2FhYUcHByTk5O3t7ekpKQWFhbGxsZ5eXlISEj51Fd+AAAEiElEQVR4nMWb2ZaiMBCGAyLggogoCAqi9vs/4+h4nFGoJFWVpf97ur7TSWpXBDzN8nPaLPZxvImKdDkkzD8TBILzUVkVsfjSetG33gDySIDaVqEPgJvE/F+E3DlAVsjNPxXt3AKc1eafWs3dAcxXevtCLGgvggBQKk7/U5vMDUDW4ewLEV9cALSx3vI/EQiwAMmeYF/EeK+EBAgXFPtC7NE3EQmQ0uwL8YP1ijiAimpfiNomQEm5gG/dLAKQD+CphT2Ads0BQL5FDEDDsi+2tgAynn0hTpYAUCEI0tESwJULIEorADe2fdQZ6AHufIDCCsCWDxAjsiMtwIFvH+UKtAA7E4DeAsBgArC0ANCbAKQWAAweAeoZaAHYfvCpyALAjwnAxgKAphZTCxEQtQCsZOQtRFKiBViaADQWABj56H8hMlMtQG4CcLYAYBCNUfFYCzDjZaQvIepkfTg2cASd3j4CwCAYIEIBAsAgIcBUBoik9Mi1H8/sALBdESYlxAAknNL0KVSvCFOaIZpzkBB+GAkwQ7enPrU+WAMIThwAZIcCBRAyaoMY2SXCtWgy+j3E9q2RTSpyTETEQRIA9SWssPbxnVJSmyTCt8zRAHNCq3KPaQxQAZDN+qdIDXvKvAB5D1LS6Ig0MckxrxFREbMBgkwbmjvKrIAO8KjWNyrz1544MWKM7ea9tGsW3xkDVMbgctaDL/K4JDw+I4CHkqH5uo9xUbGsowGSw+Rphe0t75fp6t4PuxZI/mYHTEaoByhPzbF71CbxgjQTPR2f32yiNNdhKAHK5eezK9CTqN3HZ+tFr2RQAJT1eEZ/Rvm4ZOyzryoEKUC4BNzeFjGHGYBneh3IAKUk+NWaMz1ISslU5qEkADdpItxVCoQS+re9FEmSZBhgp6rJr3fJ38pWqs86+CsQQJeDrhvgLuS6jGULOmoI4IAoRKLl7uMokrxGzJYj6PAAgBBZDq+jpj5XD2/YYMsGqF8AADBLQYwAbzoFYI4pUdpMD2EKgFzU4GlaME4AjCYkWk0rxgmAUXNar0nJNgZo3doX3TiejQGMmuMYjcPSCIDdD0JrPFAeATj0AW/tVAAhqxtEU6ECuLi3L0SiADCa0WGVKwCcesG3ajmA0WwAraMcwK0b/qdECmA0IcPrIgUgbqxxVcsA/FyB0UT5E8BoQEbRXAIw+AJoJQAeAsFLFwmA0aoARZUEwNMjEOIuAVA2wGyqgQFCX/a/3uEHgNHKEklXGMBTJHhqDgJ4yUZeSkAAo1UFmkoQYPAHcAABWNNBnloQwGhdhaYMBDBaW6PpBgJ4i0VfxcnvAMD/gV+/hL/uiNgr3HSFIEDpzf41AAECD6XxS4UEwHl35K1eAuAtGsmy4sST/X0gAeD+lIKqsxTAdY/upW4mBfBTGVSBHODgoTzdhwqAYHBuPx5tmI07pc57FOP9okmz2vFLmOxXTADmLv3herrfAYxsTs76xR0wbIOmZvpNEZ4KaMcAHlzKft1togZesJTNjncrq8F5W8tm/4rxfVutfo4bwwsR76MiHRT7HX8AMWE71qlJn3EAAAAASUVORK5CYII="
+          class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
+        />
+      </div>
+
+      <div class="absolute top-0 right-0 h-12 w-18 p-4">
+        <button class="js-change-theme focus:outline-none">🌙</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script>
+      tippy(".link", {
+        placement: "bottom",
+      });
+      const toggle = document.querySelector(".js-change-theme");
+      const body = document.querySelector("body");
+      const profile = document.getElementById("profile");
+
+      toggle.addEventListener("click", () => {
+        if (body.classList.contains("text-gray-900")) {
+          toggle.innerHTML = "☀️";
+          body.classList.remove("text-gray-900");
+          body.classList.add("text-gray-100");
+          profile.classList.remove("bg-white");
+          profile.classList.add("bg-gray-900");
+        } else {
+          toggle.innerHTML = "🌙";
+          body.classList.remove("text-gray-100");
+          body.classList.add("text-gray-900");
+          profile.classList.remove("bg-gray-900");
+          profile.classList.add("bg-white");
+        }
+      });
+      function shareOnSocialMedia() {
+        var url = window.location.href;
+        var title = document.title;
+        var description = document
+          .querySelector('meta[name="description"]')
+          .getAttribute("content");
+        var hashtags = "example, hashtag";
+
+        switch (e) {
+          case "facebook":
+            window.open(
+              "https://www.facebook.com/sharer/sharer.php?u=" +
+                encodeURIComponent(url)
+            );
+            break;
+          case "twitter":
+            window.open(
+              "https://twitter.com/intent/tweet?text=" +
+                encodeURIComponent(title) +
+                "&url=" +
+                encodeURIComponent(url) +
+                "&hashtags=" +
+                encodeURIComponent(hashtags)
+            );
+            break;
+          case "linkedin":
+            window.open(
+              "https://www.linkedin.com/sharing/share-offsite/?url=" +
+                encodeURIComponent(url) +
+                "&title=" +
+                encodeURIComponent(title) +
+                "&summary=" +
+                encodeURIComponent(description)
+            );
+            break;
+          case "pinterest":
+            window.open(
+              "https://pinterest.com/pin/create/button/?url=" +
+                encodeURIComponent(url) +
+                "&media=" +
+                encodeURIComponent(image) +
+                "&description=" +
+                encodeURIComponent(description)
+            );
+            break;
+          default:
+            console.log("Invalid social media platform");
+        }
+      }
+    </script>
+  </body>
+</html>
